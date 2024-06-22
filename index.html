@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Timer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6B73FF 10%, #000DFF 100%);
+            color: white;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px #000000;
+        }
+
+        #timer {
+            font-size: 60px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 8px #000000;
+            border: 3px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        button {
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 2px 2px 5px #000000;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        #results {
+            margin-top: 20px;
+            text-align: left;
+            width: 80%;
+            max-width: 600px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+        }
+
+        #results h2 {
+            margin: 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px 10px 0 0;
+        }
+
+        #results p {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            text-shadow: 1px 1px 4px #000000;
+        }
+
+        #logo {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-shadow: 1px 1px 4px #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sport Timer</h1>
+    <div id="timer">00:00:00.000</div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+    <div id="results"></div>
+    <div id="logo">Powered by TechQuestCore</div>
+    <script src="timer.js"></script>
+</body>
+
+</html>
