@@ -3,6 +3,11 @@ let timerInterval;
 let running = false;
 
 function startTimer() {
+    const nameInput = document.getElementById('nameInput').value.trim();
+    if (nameInput === "") {
+        alert("Please enter your name before starting the timer.");
+        return;
+    }
     if (!running) {
         startTime = Date.now();
         timerInterval = setInterval(updateTimer, 10);
@@ -46,8 +51,9 @@ function pad(num, size = 2) {
 }
 
 function saveTime(time) {
+    const name = document.getElementById('nameInput').value.trim();
     let results = JSON.parse(localStorage.getItem('results')) || [];
-    results.push({ time, timestamp: new Date().toISOString() });
+    results.push({ name, time, timestamp: new Date().toISOString() });
     localStorage.setItem('results', JSON.stringify(results));
 }
 
@@ -56,7 +62,7 @@ function displayResults() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '<h2>Results</h2>';
     results.forEach((result, index) => {
-        resultsDiv.innerHTML += `<p>${index + 1}: ${formatTime(result.time)}</p>`;
+        resultsDiv.innerHTML += `<p>${index + 1}: ${result.name} - ${formatTime(result.time)}</p>`;
     });
 }
 
